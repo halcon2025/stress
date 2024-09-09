@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-app2
+  labels:
+    app: mi-app2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mi-app2
+  template:
+    metadata:
+      labels:
+        app: mi-app2
+    spec:
+      containers:
+      - name: mi-app2
+        image: 856796915494.dkr.ecr.us-east-1.amazonaws.com/mi-app2:v1
+        ports:
+        - containerPort: 80

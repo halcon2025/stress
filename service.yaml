@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mi-app2-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: mi-app2
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
