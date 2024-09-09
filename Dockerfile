@@ -9,12 +9,12 @@ RUN yum update -y && \
 WORKDIR /tmp
 
 # Descargar el archivo .zip desde GitHub
-RUN wget https://github.com/halcon2025/stress/raw/main/lab-app2.zip -O lab-app2.zip
+RUN wget https://github.com/halcon2025/stress/raw/main/lab-app.zip -O lab-app.zip
 
 # Descomprimir el archivo y mover el contenido al directorio de Apache
-RUN unzip lab-app2.zip && \
+RUN unzip lab-app.zip && \
     cp -r * /var/www/html/ && \
-    rm lab-app2.zip
+    rm lab-app.zip
 
 # Cambiar permisos para que Apache pueda acceder a los archivos
 RUN chown -R apache:apache /var/www/html/
